@@ -48,7 +48,7 @@ carts:
 catalogue:
     image:
         repo: gcr.io/sonjisu-01/catalogue
-        tag: latest
+        tag: green-test
     containerPort: 8080
     resources:
         limits:
