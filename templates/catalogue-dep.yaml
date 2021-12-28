@@ -1,6 +1,6 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: Rollout
 metadata:
   name: catalogue
   labels:
@@ -10,6 +10,11 @@ spec:
   selector:
     matchLabels:
       name: catalogue
+  strategy:
+    blueGreen:
+      activeService: catalogue2
+      previewService: catalogue
+      autoPromotionEnabled: false
   template:
     metadata:
       labels:
